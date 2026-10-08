@@ -1,0 +1,39 @@
+.home-page { padding-top: 42rpx; }
+.topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 34rpx; }
+.hello { margin-top: 10rpx; font-size: 48rpx; line-height: 1.2; }
+.manage-entry { height: 64rpx; padding: 0 20rpx 0 14rpx; border-radius: 99rpx; display: flex; gap: 5rpx; align-items: center; justify-content: center; background: #df8465; color: #fffaf4; font-size: 23rpx; box-shadow: 0 8rpx 18rpx rgba(179,94,69,.2); }
+.manage-plus { font-size: 31rpx; line-height: 1; }
+.search-box { height: 84rpx; display: flex; align-items: center; gap: 16rpx; padding: 0 24rpx; background: #f3ece4; border: 1rpx solid #eee2d7; border-radius: 22rpx; margin-bottom: 30rpx; }
+.search-box input { flex: 1; color: #443b35; font-size: 27rpx; }
+.search-icon { font-size: 42rpx; color: #8b7b6f; line-height: 1; transform: rotate(-20deg); }
+.search-placeholder { color: #aa9d92; }
+.clear-search { color: #a79488; font-size: 38rpx; }
+.category-scroll { white-space: nowrap; margin: 0 -36rpx 32rpx; padding-left: 36rpx; width: calc(100% + 72rpx); }
+.category-row { display: inline-flex; gap: 18rpx; }
+.category { padding: 13rpx 23rpx; background: transparent; border: 1rpx solid #e7dbd0; border-radius: 99rpx; color: #95877c; font-size: 24rpx; }
+.category.active { color: #fff9f3; background: #bd654b; border-color: #bd654b; box-shadow: 0 6rpx 14rpx rgba(189,101,75,.18); }
+.feature-card { height: 370rpx; border-radius: 28rpx; position: relative; overflow: hidden; margin-bottom: 46rpx; box-shadow: 0 16rpx 36rpx rgba(103,68,42,.12); }
+.feature-image { width: 100%; height: 100%; display: block; }
+.feature-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(27,20,14,.72) 0%, rgba(27,20,14,.24) 65%, rgba(27,20,14,.05) 100%); }
+.feature-copy { position: absolute; left: 30rpx; top: 32rpx; color: #fffaf3; width: 78%; }
+.feature-label { display: inline-block; padding: 8rpx 14rpx; background: #dc805f; border-radius: 8rpx; font-size: 20rpx; margin-bottom: 16rpx; }
+.feature-title { font-size: 50rpx; line-height: 1.15; margin-bottom: 10rpx; }
+.feature-desc { font-size: 24rpx; color: #f9e9dc; margin-bottom: 24rpx; }
+.feature-meta { font-size: 22rpx; color: #f0d3c2; }
+.feature-arrow { position: absolute; right: 26rpx; bottom: 24rpx; width: 60rpx; height: 60rpx; border-radius: 50%; background: #fff7ed; color: #9d533e; display: flex; align-items: center; justify-content: center; font-size: 31rpx; }
+.recipe-head { margin-bottom: 22rpx; }
+.recipe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26rpx 20rpx; }
+.recipe-card { min-width: 0; overflow: hidden; }
+.card-image-wrap { height: 260rpx; border-radius: 22rpx; overflow: hidden; position: relative; background: #eee4da; }
+.card-image { width: 100%; height: 100%; display: block; }
+.heart { position: absolute; right: 16rpx; top: 16rpx; width: 52rpx; height: 52rpx; display: flex; align-items: center; justify-content: center; background: rgba(255,249,242,.88); border-radius: 50%; color: #a08a7c; font-size: 30rpx; }
+.heart.liked { color: #c55c4c; }
+.time-pill { position: absolute; left: 14rpx; bottom: 14rpx; padding: 7rpx 12rpx; border-radius: 99rpx; background: rgba(36,25,17,.58); color: #fffaf4; font-size: 20rpx; }
+.card-body { padding: 17rpx 4rpx 0; }
+.card-title { font-size: 30rpx; font-weight: 700; margin-bottom: 8rpx; }
+.card-subtitle { color: #978a7f; font-size: 22rpx; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 15rpx; }
+.level { color: #ae6952; font-size: 21rpx; }
+.empty-state { min-height: 330rpx; color: #a09388; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18rpx; font-size: 24rpx; }
+.empty-icon { font-size: 74rpx; color: #d6c3b5; transform: rotate(-20deg); }
+.floating-add { position: fixed; right: 36rpx; bottom: 48rpx; width: 92rpx; height: 92rpx; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: #bd654b; color: #fffaf4; font-size: 52rpx; box-shadow: 0 14rpx 30rpx rgba(135,65,43,.3); z-index: 10; }

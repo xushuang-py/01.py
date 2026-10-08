@@ -1,0 +1,26 @@
+<view class="page manage-page">
+  <view class="manage-hero">
+    <text class="eyebrow">MY RECIPE BOOK</text>
+    <view class="manage-title serif">管理我的菜谱</view>
+    <view class="manage-subtitle">添加新菜，也可以修改已有食材和做法</view>
+  </view>
+
+  <button class="primary-add" bindtap="addRecipe"><text>＋</text> 添加一道新菜</button>
+
+  <view class="section-head list-head">
+    <text class="section-title serif">全部菜谱</text>
+    <text class="section-link">{{recipes.length}} 道</text>
+  </view>
+
+  <view class="manage-list">
+    <view wx:for="{{recipes}}" wx:key="id" class="manage-card" data-id="{{item.id}}" bindtap="editRecipe">
+      <image src="{{item.image}}" mode="aspectFill" />
+      <view class="manage-card-copy">
+        <view class="manage-card-title">{{item.name}}</view>
+        <view class="manage-card-desc">{{item.shortDesc}}</view>
+        <view class="manage-card-meta"><text>{{item.category}}</text><text>{{item.time}} 分钟</text></view>
+      </view>
+      <text class="edit-arrow">›</text>
+    </view>
+  </view>
+</view>

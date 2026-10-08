@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/manage/manage",
+    "pages/editor/editor"
+  ],
+  "window": {
+    "navigationBarTitleText": "灶台日记",
+    "navigationBarBackgroundColor": "#fbf7f1",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#fbf7f1",
+    "backgroundTextStyle": "light"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

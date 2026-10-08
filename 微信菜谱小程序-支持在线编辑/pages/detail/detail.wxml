@@ -1,0 +1,40 @@
+<view wx:if="{{recipe}}" class="detail-page">
+  <view class="detail-hero">
+    <image src="{{recipe.image}}" mode="aspectFill" />
+    <view class="hero-shade"></view>
+    <view class="back-btn" bindtap="goBack">‹</view>
+    <view class="hero-favorite {{recipe.favorite ? 'liked' : ''}}" bindtap="toggleFavorite">{{recipe.favorite ? '♥' : '♡'}}</view>
+    <view class="hero-copy">
+      <view class="tag hero-tag">{{recipe.category}}</view>
+      <view class="detail-title serif">{{recipe.name}}</view>
+      <view class="detail-desc">{{recipe.shortDesc}}</view>
+    </view>
+  </view>
+
+  <view class="detail-content">
+    <view class="quick-info">
+      <view><text class="info-icon">◷</text><text class="info-label">准备</text><text class="info-value">{{recipe.time}} 分钟</text></view>
+      <view><text class="info-icon">♨</text><text class="info-label">难度</text><text class="info-value">{{recipe.level}}</text></view>
+      <view><text class="info-icon">▣</text><text class="info-label">份量</text><text class="info-value">2 人份</text></view>
+    </view>
+
+    <view class="detail-section">
+      <view class="detail-section-title"><text class="serif">食材准备</text><text class="count">{{recipe.ingredients.length}} 种食材</text></view>
+      <view class="ingredient-list">
+        <view wx:for="{{recipe.ingredients}}" wx:key="0" class="ingredient-row"><text class="ingredient-name">{{item[0]}}</text><text class="ingredient-line"></text><text class="ingredient-amount">{{item[1]}}</text></view>
+      </view>
+    </view>
+
+    <view class="detail-section steps-section">
+      <view class="detail-section-title"><text class="serif">炒菜步骤</text><text class="count">跟着做就好</text></view>
+      <view class="steps-list">
+        <view wx:for="{{recipe.steps}}" wx:key="*this" class="step-row">
+          <view class="step-number">{{index + 1}}</view>
+          <view class="step-copy">{{item}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="tip-box"><text class="tip-mark">✦</text><text>小贴士：大火快炒能锁住食材水分，出锅前再调味更鲜。</text></view>
+    <button class="edit-recipe-btn" bindtap="editRecipe">编辑这道菜谱</button>
+  </view>
+</view>

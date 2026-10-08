@@ -1,0 +1,50 @@
+<view class="page editor-page">
+  <view class="form-intro">
+    <text class="eyebrow">{{isEditing ? 'EDIT RECIPE' : 'NEW RECIPE'}}</text>
+    <view class="form-title serif">{{isEditing ? '修改菜谱' : '添加一道菜'}}</view>
+    <view class="form-subtitle">图片、食材和步骤都可以自己填写</view>
+  </view>
+
+  <view class="form-section">
+    <view class="form-section-title">菜品图片</view>
+    <view class="image-picker" bindtap="chooseImage">
+      <image wx:if="{{form.image}}" src="{{form.image}}" mode="aspectFill" />
+      <view wx:else class="image-empty"><text class="camera">▣</text><text>从相册选择或拍照</text></view>
+      <view wx:if="{{form.image}}" class="change-image">更换图片</view>
+    </view>
+  </view>
+
+  <view class="form-section field-stack">
+    <view class="field"><text>菜名 *</text><input value="{{form.name}}" placeholder="例如：可乐鸡翅" data-field="name" bindinput="changeField" /></view>
+    <view class="field"><text>一句话介绍</text><input value="{{form.shortDesc}}" placeholder="例如：甜香入味 · 鸡肉嫩滑" data-field="shortDesc" bindinput="changeField" /></view>
+    <view class="two-fields">
+      <view class="field half"><text>分类</text><picker range="{{categories}}" value="{{categoryIndex}}" bindchange="changeCategory"><view class="picker-value">{{categories[categoryIndex]}} <text>⌄</text></view></picker></view>
+      <view class="field half"><text>难度</text><picker range="{{levels}}" value="{{levelIndex}}" bindchange="changeLevel"><view class="picker-value">{{levels[levelIndex]}} <text>⌄</text></view></picker></view>
+    </view>
+    <view class="field"><text>烹饪时间（分钟）</text><input type="number" value="{{form.time}}" placeholder="20" data-field="time" bindinput="changeField" /></view>
+  </view>
+
+  <view class="form-section">
+    <view class="form-head"><view class="form-section-title">食材准备</view><view class="small-add" bindtap="addIngredient">＋ 添加食材</view></view>
+    <view class="ingredient-editor">
+      <view wx:for="{{form.ingredients}}" wx:key="index" class="ingredient-edit-row">
+        <input value="{{item.name}}" placeholder="食材名称" data-index="{{index}}" bindinput="changeIngredientName" />
+        <input value="{{item.amount}}" placeholder="用量" data-index="{{index}}" bindinput="changeIngredientAmount" />
+        <text class="remove" data-index="{{index}}" bindtap="removeIngredient">×</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="form-section">
+    <view class="form-head"><view class="form-section-title">制作步骤</view><view class="small-add" bindtap="addStep">＋ 添加步骤</view></view>
+    <view class="step-editor">
+      <view wx:for="{{form.steps}}" wx:key="index" class="step-edit-row">
+        <view class="step-index">{{index + 1}}</view>
+        <textarea auto-height value="{{item}}" placeholder="描述这一步怎么做" data-index="{{index}}" bindinput="changeStep"></textarea>
+        <text class="remove" data-index="{{index}}" bindtap="removeStep">×</text>
+      </view>
+    </view>
+  </view>
+
+  <button class="save-button" loading="{{saving}}" disabled="{{saving}}" bindtap="saveRecipe">保存菜谱</button>
+</view>

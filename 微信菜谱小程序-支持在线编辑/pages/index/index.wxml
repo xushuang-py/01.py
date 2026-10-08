@@ -1,0 +1,56 @@
+<view class="page home-page">
+  <view class="topbar">
+    <view>
+      <text class="eyebrow">MONDAY · SEPT 07</text>
+      <view class="hello serif">今天想吃点什么？</view>
+    </view>
+    <view class="manage-entry" bindtap="openManage"><text class="manage-plus">＋</text><text>管理</text></view>
+  </view>
+
+  <view class="search-box">
+    <text class="search-icon">⌕</text>
+    <input value="{{keyword}}" placeholder="搜索菜名、食材" placeholder-class="search-placeholder" bindinput="onSearch" />
+    <text wx:if="{{keyword}}" class="clear-search" bindtap="clearSearch">×</text>
+  </view>
+
+  <scroll-view class="category-scroll" scroll-x="true" show-scrollbar="false">
+    <view class="category-row">
+      <view wx:for="{{categories}}" wx:key="label" class="category {{activeCategory === item ? 'active' : ''}}" data-category="{{item}}" bindtap="selectCategory">{{item}}</view>
+    </view>
+  </scroll-view>
+
+  <view class="feature-card" data-id="{{featured.id}}" bindtap="openDetail">
+    <image class="feature-image" src="{{featured.image}}" mode="aspectFill" />
+    <view class="feature-overlay"></view>
+    <view class="feature-copy">
+      <view class="feature-label">今日推荐</view>
+      <view class="feature-title serif">{{featured.name}}</view>
+      <view class="feature-desc">{{featured.shortDesc}}</view>
+      <view class="feature-meta"><text>⏱ {{featured.time}} 分钟</text><text> · </text><text>难度 {{featured.level}}</text></view>
+    </view>
+    <view class="feature-arrow">↗</view>
+  </view>
+
+  <view class="section-head recipe-head">
+    <text class="section-title serif">灵感菜谱</text>
+    <text class="section-link">{{filteredRecipes.length}} 道菜</text>
+  </view>
+
+  <view wx:if="{{filteredRecipes.length}}" class="recipe-grid">
+    <view wx:for="{{filteredRecipes}}" wx:key="id" class="recipe-card" data-id="{{item.id}}" bindtap="openDetail">
+      <view class="card-image-wrap">
+        <image class="card-image" src="{{item.image}}" mode="aspectFill" />
+        <view class="heart {{item.favorite ? 'liked' : ''}}" data-id="{{item.id}}" catchtap="toggleFavorite">{{item.favorite ? '♥' : '♡'}}</view>
+        <view class="time-pill">{{item.time}} min</view>
+      </view>
+      <view class="card-body">
+        <view class="card-title">{{item.name}}</view>
+        <view class="card-subtitle">{{item.shortDesc}}</view>
+        <view class="card-bottom"><text class="tag">{{item.category}}</text><text class="level">{{item.level}}</text></view>
+      </view>
+    </view>
+  </view>
+  <view wx:else class="empty-state"><text class="empty-icon">⌕</text><text>还没有找到这道菜，换个关键词试试</text></view>
+
+  <view class="floating-add" bindtap="addRecipe">＋</view>
+</view>

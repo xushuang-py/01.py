@@ -1,0 +1,4 @@
+{
+  "desc": "灶台日记菜谱小程序",
+  "rules": [{ "action": "allow", "page": "*" }]
+}

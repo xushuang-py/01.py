@@ -1,0 +1,16 @@
+.manage-page { padding-top: 44rpx; }
+.manage-hero { margin-bottom: 32rpx; }
+.manage-title { margin: 10rpx 0 10rpx; font-size: 48rpx; }
+.manage-subtitle { color: #95877c; font-size: 24rpx; }
+.primary-add { height: 92rpx; margin: 0 0 44rpx; border-radius: 22rpx; display: flex; align-items: center; justify-content: center; gap: 8rpx; background: #bd654b; color: #fffaf4; font-size: 28rpx; box-shadow: 0 10rpx 24rpx rgba(153,75,50,.2); }
+.primary-add::after { border: 0; }
+.primary-add text { font-size: 38rpx; }
+.list-head { margin-bottom: 20rpx; }
+.manage-list { display: flex; flex-direction: column; gap: 18rpx; }
+.manage-card { min-height: 154rpx; padding: 14rpx 20rpx 14rpx 14rpx; display: flex; align-items: center; gap: 20rpx; border: 1rpx solid #eee1d6; border-radius: 22rpx; background: #fffaf4; }
+.manage-card image { flex: 0 0 126rpx; width: 126rpx; height: 126rpx; border-radius: 16rpx; background: #eee4da; }
+.manage-card-copy { min-width: 0; flex: 1; }
+.manage-card-title { margin-bottom: 8rpx; font-size: 28rpx; font-weight: 700; }
+.manage-card-desc { margin-bottom: 12rpx; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #9b8c81; font-size: 21rpx; }
+.manage-card-meta { display: flex; gap: 18rpx; color: #b0654d; font-size: 20rpx; }
+.edit-arrow { color: #c5afa1; font-size: 46rpx; }
